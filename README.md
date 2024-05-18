@@ -282,6 +282,16 @@ KUT CI/CD with Kubernetes
           git config --unset --global user.name
           git config --unset --global user.email
 
+          git remote -v
+          git push --force myapp-test
+          
+          git config credential.helper store
+          git config credential.helper store --global
+          
+          git config --unset credential.helper
+          git config --global --unset credential.helper
+
+
 - Generate SSH Key
  
           ssh-keygen -t rsa -b 4096
