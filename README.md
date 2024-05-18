@@ -136,10 +136,19 @@ KUT CI/CD with Kubernetes
 
           docker pull nginx:alpine
           docker images
+          user1@jenkins:/etc/docker$ sudo vi daemon.json
+          {
+                  "insecure-registries": ["harbor.ideacube.co.kr"]
+          }         
+          sudo docker restart docker
+          cd /opt/harbor
+          sudo docker compose down -v
+          sudo docker compose up -d
           
           # harbor-domain.com/project/image:version
           # 'harbor.ideacube.co.kr/library/nginx:alpine' -> the default tag 'nginx:alpine'
-          
+          docker login http://harbor.ideacube.co.kr
+            
           docker tag nginx:alpine harbor.ideacube.co.kr/library/nginx:alpine
           docker push harbor.ideacube.co.kr/library/nginx:alpine          
 
