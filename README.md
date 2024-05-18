@@ -282,6 +282,16 @@ KUT CI/CD with Kubernetes
           git config --unset --global user.name
           git config --unset --global user.email
 
+- Generate SSH Key
+ 
+          ssh-keygen -t rsa -b 4096
+          cd ~/.ssh
+          cat id_rsa.pub >> ~/.ssh/authorized_keys
+          cat authorized_keys
+          cat id_rsa
+          # Usage Visual Studio Code
+          copy id_rsa on Host Windows(C:\Users\사용자\.ssh)
+
 - Docker Security Issues
 
           // Security Issues 
