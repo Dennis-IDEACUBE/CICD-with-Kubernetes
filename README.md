@@ -400,7 +400,7 @@ KUT CI/CD with Kubernetes
                       sshCommand remote: remote, command: "kubectl apply -f myapp-deployment.yml"
                   }
               }
-
+       }
 
        -- Dokerfile
        FROM openjdk:17-slim
@@ -443,6 +443,5 @@ KUT CI/CD with Kubernetes
              targetPort: 8080
          selector:
            app: myapp
-                 }
        
        
