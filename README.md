@@ -210,7 +210,7 @@ KUT CI/CD with Kubernetes
           /etc/containerd/config.toml
           sandbox_image = "registry.k8s.io/pause:3.8" -> "registry.k8s.io/pause:3.9"
 
-### Control Panel
+### Control
 
           kubeadm init --pod-network-cidr 10.10.0.0/16 --node-name k8s-control
           kubeadm token create --print-join-command
