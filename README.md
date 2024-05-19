@@ -12,6 +12,14 @@ KUT CI/CD with Kubernetes
 | worker-node-01     | worker-node-01.ideacube.co.kr | 2 vCPU, 4 GB RAM, 100GB Disk    | 192.168.15.102 |  26 -> 22            |  -                    |
 | worker-node-02     | worker-node-02.ideacube.co.kr | 2 vCPU, 4 GB RAM, 100GB Disk    | 192.168.15.102 |  27 -> 22            |  -                    |
 
+- Change Resources
+Gitlab 4 cpu 8GB
+Jenkins 4 cpu 8GB
+Harbor 2 cpu 2GB
+K8s-control 2cpu 2GB
+Worker-node-01 2cpu 1GB
+Worker-node-02 2cpu 1GB
+
 ### Visual Studio Code & VirtualBox
 
           VirtualBox
@@ -322,3 +330,5 @@ KUT CI/CD with Kubernetes
           kubectl diff -f declarative-deployment.yaml
           
           kubectl get deployment nginx-declarative -o=yaml
+
+
