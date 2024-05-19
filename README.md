@@ -344,4 +344,15 @@ KUT CI/CD with Kubernetes
           
           kubectl get deployment nginx-declarative -o=yaml
 
+  - ArgoCD
+
+          kubectl create namespace argocd
+          kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+
+          kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath="{.data.password}" | base64 -d && echo
+
+
+          kubectl delete -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+          kubectl delete namespace argocd
+          
 
