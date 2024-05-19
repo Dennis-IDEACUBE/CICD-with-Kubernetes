@@ -400,6 +400,49 @@ KUT CI/CD with Kubernetes
                       sshCommand remote: remote, command: "kubectl apply -f myapp-deployment.yml"
                   }
               }
-          }
 
 
+       -- Dokerfile
+       FROM openjdk:17-slim
+       ARG JAR_FILE=target/*.jar
+       COPY ${JAR_FILE} app.jar
+       ENTRYPOINT ["java","-jar","/app.jar"]
+       
+       -- myapp-deployment.yaml
+       apiVersion: apps/v1
+       kind: Deployment
+       metadata:
+         name: myapp
+       spec:
+         replicas: 3
+         selector:
+           matchLabels:
+             app: myapp
+         template:
+           metadata:
+             labels:
+               app: myapp
+           spec:
+             containers:
+               - name: myapp-web
+                 image: dennis1945/myapp
+                 ports:
+                   - containerPort: 8080
+                 env:
+                   - name: PORT
+                     value: "8080"
+       ---
+       apiVersion: v1
+       kind: Service
+       metadata:
+         name: myapp
+       spec:
+         type: NodePort
+         ports:
+           - port: 80
+             targetPort: 8080
+         selector:
+           app: myapp
+                 }
+       
+       
