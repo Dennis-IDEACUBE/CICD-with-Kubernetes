@@ -21,6 +21,18 @@ KUT CI/CD with Kubernetes
           Worker-node-01 2cpu 1GB
           Worker-node-02 2cpu 1GB
 
+          Local PC : vscode, java, git
+          Gitlab : gitlab-ce, java, git
+          Jenkins : java, jenkins, git, maven, docker(--insecure) 
+          Harbor 
+          k8s-control : docker(--insecure)  
+          worker-node-01 
+          worker-node-02  
+          
+          user1/1234
+          root/Pa$$w0rd123
+          admin/Pa$$w0rd123
+
 ### Visual Studio Code & VirtualBox
 
           VirtualBox
