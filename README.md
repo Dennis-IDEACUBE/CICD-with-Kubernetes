@@ -368,7 +368,7 @@ KUT CI/CD with Kubernetes
                   cleanWs()
               }
               stage("Checkout from SCM"){
-                  git branch: 'main', credentialsId: 'gitlab_idpwd', url: 'http://gitlab.ideacubr.co.kr/root/myapp.git'
+                  git branch: 'main', credentialsId: 'gitlab_idpwd', url: 'http://gitlab.ideacube.co.kr/root/myapp.git'
               }
               stage("Build Application"){
                   sh "mvn clean package"
